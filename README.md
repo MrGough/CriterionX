@@ -1,4 +1,4 @@
-# Magic-Panda
+# Sentient Soup
 Javascript &amp; PHP Validation Plugin
 
 <hr>

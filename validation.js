@@ -3,22 +3,23 @@ class Validation
 {
 	
 	// CONSTUCTOR 
-	constructor(VALUE, LABEL, VTARGET, VID, VOPTIONS)
+	constructor(VALUE, LABEL, VTARGET, VID, VOPTIONS, VCOUNT)
 	{
 		this.VALUE = VALUE || 'data-save';
 		this.LABEL = LABEL || 'data-label';
 		this.VTARGET = VTARGET || 'data-vrule';
 		this.VID = VID || 'data-vid';
 		this.VOPTIONS = VOPTIONS || 'data-voption';
+		this.VCOUNT = VCOUNT || 'data-vcount';
 	}
 	
 	// BUILD VALIDATION ELEMENT
 	builder ()
 	{
 		let Validation_Element = $('['+ this.VTARGET +']');
-		Validation_Element.each( function(Counter)
+		Validation_Element.each( function(VCount)
 		{
-			$(this).attr('['+ this.VID +']', Counter);
+			$(this).attr('['+ this.VID +']', VCount);
 		});
 	}
 	
@@ -31,44 +32,132 @@ class Validation
 	// CONTAINER FOR VALIDATION RULES
 	rules (Rules, Element)
 	{
-		// VALIDATE AS REQUIRED FIELD
 		required (Element)
 		{
 			
 		}
 		
-		// VALIDATE AS EMAIL
+		no_special_characters (Element)
+		{
+			
+		}
+		
+		currency (Element)
+		{
+			
+		}
+		
 		email (Element)
 		{
 			
 		}
 		
-		// 
-		phone_mobile (Element)
+		mobile (Element)
 		{
 			
 		}
 		
-		//
-		phone_landline (Element)
+		landline (Element)
 		{
 			
 		}
 		
-		//
-		postcode (Element)
+		date_today (Element)
 		{
 			
 		}
 		
-		//
-		day_before_now (Element)
+		date_before_today (Element)
 		{
 			
 		}
 		
-		//
-		day_after_now (Element)
+		date_after_today (Element)
+		{
+			
+		}
+		
+		date_arg (Element)
+		{
+			
+		}
+		
+		date_before_arg (Element)
+		{
+			
+		}
+		
+		date_after_arg (Element)
+		{
+			
+		}
+		
+		date_within_arg (Element)
+		{
+			
+		}
+		
+		time_now (Element)
+		{
+			
+		}
+		
+		time_before_now (Element)
+		{
+			
+		}
+		
+		time_after_now (Element)
+		{
+			
+		}
+		
+		time_arg (Element)
+		{
+			
+		}
+		
+		time_after_arg (Element)
+		{
+			
+		}
+		
+		time_before_arg (Element)
+		{
+			
+		}
+		
+		time_within_arg (Element)
+		{
+			
+		}
+		
+		minimum (Element)
+		{
+			
+		}
+		
+		maximum (Element)
+		{
+			
+		}
+		
+		age_over_arg (Element)
+		{
+			
+		}
+		
+		age_under_arg (Element)
+		{
+			
+		}
+		
+		password (Element)
+		{
+			
+		}
+		
+		match (Element)
 		{
 			
 		}

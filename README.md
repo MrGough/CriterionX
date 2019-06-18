@@ -1,4 +1,4 @@
-# Sentient Soup
+# VAL - X - MODULAR
 Javascript &amp; PHP Validation Plugin
 
 <hr>

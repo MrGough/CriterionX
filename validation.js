@@ -3,12 +3,13 @@ class Validation
 {
 	
 	// CONSTUCTOR 
-	constructor(VALUE, LABEL, VTARGET, VID)
+	constructor(VALUE, LABEL, VTARGET, VID, VOPTIONS)
 	{
 		this.VALUE = VALUE || 'data-save';
 		this.LABEL = LABEL || 'data-label';
 		this.VTARGET = VTARGET || 'data-vrule';
 		this.VID = VID || 'data-vid';
+		this.VOPTIONS = VOPTIONS || 'data-voption';
 	}
 	
 	// BUILD VALIDATION ELEMENT
@@ -95,6 +96,13 @@ class Validation
 			break;
 		}
 	}
+	
+	// BUILD VALIDATION REPORT
+	report ()
+	{
+		
+	}
+	
 	
 	// ---- VALIDATION STATUS ACTIONS ---- //
 	

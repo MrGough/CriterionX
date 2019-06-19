@@ -1,4 +1,4 @@
-# VAL - X - MODULAR
+# CRITERION X
 Javascript &amp; PHP Validation Plugin
 
 <hr>

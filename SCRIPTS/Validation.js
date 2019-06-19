@@ -10,35 +10,281 @@
 
 class Validation
 {
-	constructor (ELEMENT, $)
+	constructor (ELEMENT)
 	{
-		this.Value = $(ELEMENT).val();
-		this.Element = $;
-		this.Test = ELEMENT;
+		this.id = $(ELEMENT).attr('data-vid');
+		this.value = $(ELEMENT).val();
+		this.rules = $(ELEMENT).attr('data-vrule');
+		this.options = $(ELEMENT).attr('data-voption');
+		this.code = 0;
+		this.status = 1; 
+		this.core = ELEMENT;
 		
 		return this;
-		
-		/*
-		this.Value = VALUE || 'data-value';
-		this.VRule = VRULE || 'data-vrule';
-		this.Label = LABEL || 'data-label';
-		this.VID = VID || 'data-vid';
-		this.VOptions = VOPTIONS || 'data-voptions';
-		*/
 	}
 
 	builder ()
 	{
-		const VELEM = this.Element('[data-vrule]');
-		const $ = this.Element;
+		$('[data-vrule]').each( function(vid)
+		{
+			let Rules = $(this).attr('data-vrule');
+				Rules = Rules.split(',');
+			
+			for (let i = 0; i < Rules.length; i+=1)
+			{
+				console.log(Rules[i]);
+				
+				/*
+					RUN CHECK FOR CRITERION CALLED
+				*/
+			}
+			
+			$(this).attr('data-vid', vid);
+		});
+	}
+	
+	run ()
+	{
+		this.rules = (this.rules ? this.rules.split(',') : this.rules);
+		let r = new Rule(this);
+	}
+	
+	operator (rule)
+	{
+		// RETURN RULE [STRING] PASSED
+		if (!isNaN(rule))
+		{
+			return rule;
+		}
 		
-		return $;
-		
-		
-		/*
-		const VELEM = $('['+ this.VRule +']');
-		VELEM.each(function (VID){ $(this).attr(this.VID, VID); });
-		return this.Label;
-		*/
+		// RETURN RULE [INT] PASSED
+		switch (rule)
+		{
+			case 'required':
+			return 1;
+			break;
+			
+			case 'no_special_chars':
+			return 2;
+			break;
+			
+			case 'currency':
+			return 3;
+			break;
+			
+			case 'email':
+			return 4;
+			break;
+			
+			case 'mobile':
+			return 5;
+			break;
+			
+			case 'landline':
+			return 6;
+			break;
+			
+			case 'date_today':
+			return 7;
+			break;
+			
+			case 'date_before_today':
+			return 8;
+			break;
+			
+			case 'date_after_today':
+			return 9;
+			break;
+			
+			case 'date_arg':
+			return 10;
+			break;
+			
+			case 'date_before_arg':
+			return 11;
+			break;
+			
+			case 'date_after_arg':
+			return 12;
+			break;
+			
+			case 'date_within_arg':
+			return 13;
+			break;
+			
+			case 'time_now':
+			return 14;
+			break;
+			
+			case 'time_before_now':
+			return 15;
+			break;
+			
+			case 'time_after_now':
+			return 16;
+			break;
+			
+			case 'time_arg':
+			return 17;
+			break;
+			
+			case 'time_after_arg':
+			return 18;
+			break;
+			
+			case 'time_before_arg':
+			return 19;
+			break;
+			
+			case 'time_within_arg':
+			return 20;
+			break;
+			
+			case 'minimum':
+			return 21;
+			break;
+			
+			case 'maximum':
+			return 22;
+			break;
+			
+			case 'age_over_arg':
+			return 23;
+			break;
+			
+			case 'age_under_arg':
+			return 24;
+			break;
+			
+			case 'password':
+			return 25;
+			break;
+			
+			case 'equal':
+			return 26;
+			break;
+			
+			case 'identical':
+			return 27;
+			break;
+			
+			case 'match':
+			return 28;
+			break;
+			
+			default:
+			return 0;
+			break;
+		}
+	}
+	
+	code (c)
+	{
+		switch (c)
+		{
+			case 1:
+			return 'Required';
+			break;
+			
+			case 2:
+			return 'Contains Special Characters';
+			break;
+			
+			case 3:
+			return 'None Number Format';
+			break;
+			
+			case 4:
+			return 'None Email Format';
+			break;
+			
+			case 5:
+			return 'None Mobile Number Format';
+			break;
+			
+			case 6:
+			return 'None Landline Numner Format';
+			break;
+			
+			case 7:
+			return 'Not Current Date';
+			break;
+			
+			case 8:
+			return 'Not Before Today';
+			break;
+			
+			case 9:
+			return 'Not After Today';
+			break;
+			
+			case 10:
+			return 'Invalid Date';
+			break;
+			
+			case 11:
+			return 'Not Before Date';
+			break;
+			
+			case 12:
+			return 'Not After Date';
+			break;
+			
+			case 13:
+			return 'Not Within Date Parameters';
+			break;
+			
+			case 14:
+			return 'Not Current Time';
+			break;
+			
+			case 15:
+			return 'Not Before Current Time';
+			break;
+			
+			case 16:
+			return 'Not After Current Time';
+			break;
+			
+			case 17:
+			return 'Invalid Time';
+			break;
+			
+			case 18:
+			return 'Not Before Time';
+			break;
+			
+			case 19:
+			return 'Not After Time';
+			break;
+			
+			case 20:
+			return 'Not Within Time Parameters';
+			break;
+			
+			case 21:
+			return 'Below Minimum';
+			break;
+			
+			case 22:
+			return 'Above Maximum';
+			break;
+			
+			case 23:
+			return 'Age Requirements Not Met: Under Age Limit';
+			break;
+			
+			case 24:
+			return 'Age Requirements Not Met: Over Age Limit';
+			break;
+			
+			case 25:
+			return 'Not Valid Password Format';
+			break;
+			
+			case 26:
+			return 'Does Not Match';
+			break;
+		}
 	}
 }

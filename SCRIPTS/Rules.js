@@ -10,11 +10,14 @@
 
 class Rule
 {
-	constructor (e, arg, vid)
+	constructor (e)
 	{
-		this.value = e;
-		this.arg = arg;
-		this.vid = vid;
+		this.value = e.value;			// VALUE PASSED
+		this.status = e.status; 		// PASS / FAIL (TRUE / FALSE)
+		this.code = e.code;				// VALIDATION ERROR CODES
+		this.arg;						// CRITERION
+		
+		return this;
 	}
 	
 	
@@ -25,15 +28,12 @@ class Rule
 	
 	required ()
 	{
-		// ALERT METHOD CALL
-		console.log('Method Call: ' + this.value);
-		
 		if (this.value.length == 0)
 		{
-			this.value = false;
+			this.status = 0;
 		}
 		
-		return this.value;
+		return this;
 	}
 	
 	/*
@@ -42,6 +42,13 @@ class Rule
 	
 	no_special_characters ()
 	{
+		const SPECIAL_CHARACTERS_REGEX = /^[a-zA-Z0-9]{4,10}$/g;
+		
+		if (SPECIAL_CHARACTERS_REGEX.exec( this.value ) === null)
+		{
+			this.status = 0;
+		}
+		
 		return this;
 	}
 	
@@ -55,10 +62,10 @@ class Rule
 		
 		if (CURRENCY_REGEX.exec( this.value ) === null)
 		{
-			this.value = false;
+			this.status = 0;
 		}
 		
-		return this.value;
+		return this;
 	}
 	
 	/*
@@ -72,10 +79,10 @@ class Rule
 		// INVALID EMAIL ARGUMENT
 		if (EMAIL_REGEX.exec( this.value ) === null)
 		{
-			this.value = false;
+			this.status = 0;
 		}
 		
-		return this.value;
+		return this;
 	}
 	
 	/*
@@ -88,10 +95,10 @@ class Rule
 		
 		if (TELEPHONE_REGEX.exec( this.value ) === null)
 		{
-			this.value = false;
+			this.status = 0;
 		}
 
-		return this.value;
+		return this;
 	}
 	
 	/*
@@ -104,10 +111,10 @@ class Rule
 		
 		if (TELEPHONE_REGEX.exec( this.value ) === null)
 		{
-			this.value = false;
+			this.status = 0;
 		}
 
-		return this.value;
+		return this;
 	}
 	
 	/*
@@ -122,10 +129,10 @@ class Rule
 		
 		if (DAYS_DIFFERENCE !== 0)
 		{
-			this.value = false;
+			this.status = 0;
 		}
 		
-		return this.value;
+		return this;
 	}
 	
 	/*
@@ -140,10 +147,10 @@ class Rule
 		
 		if (DAYS_DIFFERENCE < 0)
 		{
-			this.value = false;
+			this.status = 0;
 		}
 		
-		return this.value;
+		return this;
 	}
 	
 	/*
@@ -158,10 +165,10 @@ class Rule
 		
 		if (DAYS_DIFFERENCE > 0)
 		{
-			this.value = false;
+			this.status = 0;
 		}
 		
-		return this.value;
+		return this;
 	}
 	
 	/*
@@ -176,10 +183,10 @@ class Rule
 		
 		if (DAYS_DIFFERENCE !== 0)
 		{
-			this.value = false;
+			this.status = 0;
 		}
 		
-		return this.value;
+		return this;
 	}
 	
 	/*
@@ -194,10 +201,10 @@ class Rule
 		
 		if (DAYS_DIFFERENCE > 0)
 		{
-			this.value = false;
+			this.status = 0;
 		}
 		
-		return this.value;
+		return this;
 	}
 	
 	/*
@@ -212,10 +219,10 @@ class Rule
 		
 		if (DAYS_DIFFERENCE < 0)
 		{
-			this.value = false;
+			this.status = 0;
 		}
 		
-		return this.value;
+		return this;
 	}
 	
 	/*
@@ -296,8 +303,8 @@ class Rule
 	
 	minimum ()
 	{
-		if (this.value < this.arg) { this.value = false; }
-		return this.value;
+		if (this.value < this.arg) { this.status = 0; }
+		return this;
 	}
 	
 	/*
@@ -306,8 +313,8 @@ class Rule
 	
 	maximum ()
 	{
-		if (this.value > this.arg) { this.value = false; }
-		return this.value;
+		if (this.value > this.arg) { this.status = 0; }
+		return this;
 	}
 	
 	/*
@@ -343,8 +350,8 @@ class Rule
 	
 	equal ()
 	{
-		if (this.value != this.arg) { this.value = false; }
-		return this.value;
+		if (this.value != this.arg) { this.status = 0; }
+		return this;
 	}
 	
 	/*
@@ -353,8 +360,8 @@ class Rule
 	
 	identical ()
 	{
-		if (this.value !== this.arg) { this.value = false; }
-		return this.value;
+		if (this.value !== this.arg) { this.status = 0; }
+		return this;
 	}
 	
 	/*

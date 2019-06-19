@@ -12,19 +12,18 @@
 
 $('[data-vrule]').each( function(ID)
 {
-	let Rules = $(this).attr('data-vrule').split(',');
+	const X = new Validation($(this));
+		console.log(X.run());
 	
-	// DISPLAY VALIDATION RULES SELECTED
-	console.log(Rules);
-	
-	$(this).attr('data-vid', ID);
-
+	const V = new Validation();
+		// V.builder($(this));
 });
 
 $('input, textarea, button').on('change', function(e)
-{
+{		
 	
 });
+
 
 
 function Controller(Element)

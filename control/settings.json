@@ -1,0 +1,19 @@
+{   
+	"value_attr":"value",
+	"rules_attr":"data-vrule",
+	"label_attr":"data-label",
+	"options_attr":"data-voption",
+	"id_attr":"data-vid",
+	"status_attr":"data-vstatus",
+	"code_attr":"data-vcode",
+	"warning_attr":"data-vwarning" 
+	"error_class":"CX_error",
+	"warning_class":"CX_warning",
+	"success_class":"CX_success",
+	"display_errors":true,
+	"display_success":false,
+	"console_log":true,
+	"set_warning_on_element":false 
+	"allow_multiple_criteria":true 
+	"display_help_messages":true
+}

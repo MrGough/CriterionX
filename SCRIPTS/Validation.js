@@ -1,6 +1,6 @@
 /*
 
-	NAME: VALIDATION CLASS
+	NAME: [ CRITERION-X ] VALIDATION CLASS
 	INFORMATION: N/A
 	VERSION: 0.0.1
 	CLEAN: N/A
@@ -10,16 +10,15 @@
 
 class Validation
 {
-	constructor (ELEMENT)
+	constructor (ELMT)
 	{
-		this.id = $(ELEMENT).attr('data-vid');
-		this.value = $(ELEMENT).val();
-		this.rules = $(ELEMENT).attr('data-vrule');
-		this.options = $(ELEMENT).attr('data-voption');
+		this.id = $(ELMT).attr('data-vid');
+		this.value = $(ELMT).val();
+		this.rules = $(ELMT).attr('data-vrule');
+		this.options = $(ELMT).attr('data-voption');
 		this.code = 0;
-		this.status = 1; 
-		this.core = ELEMENT;
-		
+		this.status = 1;
+		this.core = ELMT;
 		return this;
 	}
 
@@ -27,18 +26,6 @@ class Validation
 	{
 		$('[data-vrule]').each( function(vid)
 		{
-			let Rules = $(this).attr('data-vrule');
-				Rules = Rules.split(',');
-			
-			for (let i = 0; i < Rules.length; i+=1)
-			{
-				console.log(Rules[i]);
-				
-				/*
-					RUN CHECK FOR CRITERION CALLED
-				*/
-			}
-			
 			$(this).attr('data-vid', vid);
 		});
 	}
@@ -47,6 +34,50 @@ class Validation
 	{
 		this.rules = (this.rules ? this.rules.split(',') : this.rules);
 		let r = new Rule(this);
+	}
+	
+	config ()
+	{
+		let config = (function()
+		{
+			// RETRIEVE CONFIGURATION FILE
+			let config_file = null;
+			$.ajax({
+					'async': false,
+					'global': false,
+					'url': "config/settings.json",
+					'dataType': "json",
+					'success': function (data)
+					{
+						config_file = data;
+					}
+			});
+			return config_file;
+		})();
+		
+		// INITIALISE CRITERIONX CONFIGURATION FILE
+		return JSON.parse(config_file);
+	}
+	
+	error ()
+	{
+		let element = $('['+ this.config.id_attr +'="'+ this.id +'"]');
+		if (this.config.display_errors === true) element.attr( this.config.status_attr, this.code );
+		element.addClass( this.config.error_class );
+	}
+	
+	warning ()
+	{
+		let element = $('['+ this.config.id_attr +'="'+ this.id +'"]');
+		if (this.config.display_errors === true) element.attr( this.config.status_attr, this.code );
+		element.addClass( this.config.error_class );
+	}
+	
+	success ()
+	{
+		let element = $('['+ this.config.id_attr +'="'+ this.id +'"]');
+		if (this.config.display_success === true) element.attr( this.config.status_attr, this.code );
+		element.addClass( this.config.error_class );
 	}
 	
 	operator (rule)

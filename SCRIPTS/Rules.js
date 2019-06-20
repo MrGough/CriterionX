@@ -12,10 +12,10 @@ class Rule
 {
 	constructor (e)
 	{
-		this.value = e.value;			// VALUE PASSED
-		this.status = e.status; 		// PASS / FAIL (TRUE / FALSE)
-		this.code = e.code;				// VALIDATION ERROR CODES
-		this.arg;						// CRITERION
+		this.value = e.value; // VALUE PASSED
+		this.status = e.status; // PASS / FAIL (TRUE / FALSE)
+		this.code = e.code;	// VALIDATION ERROR CODES
+		this.arg; // CRITERION
 		
 		return this;
 	}

@@ -1,0 +1,25 @@
+<?PHP
+
+/*
+
+	NAME: RULE
+	DESCRIPTION: VALIDATION RULE CLASS
+	VERSION: 0.0.1
+	CLEAN: *
+
+*/
+
+	CLASS RULE
+	{	
+		PUBLIC FUNCTION RUN ( $INPUT, $RULE, $OPTION )
+		{
+			# ...
+		}
+		
+		PUBLIC FUNCTION REQUIRED ()
+		{
+			# ...
+		}
+	}
+
+?>

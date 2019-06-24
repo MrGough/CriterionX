@@ -1,48 +1,59 @@
 <!DOCTYPE html>
-
-<head>
-	<title>Validation Testing Area</title>
-	<link rel="stylesheet" src="../STYLES/testing.css">
-</head>
-
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../styles/form_template_1.css">
+	</head>
 <body>
 
-	<span class="container">
+<h2>Criterion-X</h2>
+<p>Testing Area</p>
+
+<div class="container">
+  
+	<div style="text-align:center">
+    <h2>Form One</h2>
+    <p>Tesing Form One.</p>
+  </div>
 	
-		<span class="form" id="form_1">
+  <div class="row">
+    
+		<div class="column">
+			<form action="/action_page.php">
+        
+				<label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." data-vrule="required">
+				
+        <label for="lname">Email</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." data-vrule="email">
+				
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+				
+        <input type="submit" value="Submit">
+				
+      </form>
+    </div>
 		
-			<h3>Form 1</h3>
-			
-			<input type="text" data-label="Your Name: " data-vrule="required" value="">
-			
-			<input type="text" data-label="Username: " data-vrule="required,no_special_chars,email" value="Steveo1925">
-			
-			<input type="date" value="2019-05-01" data-vrule="date_now">
-			
-			<button class="" data-vaction>Submit</button>
-			
-		</span>
-	
-	</span>
-	
+		
+    <div class="column">
+			<!-- ADDITIONAL FORM SECTION -->
+    </div>
+		
+  </div>
+</div>
+
 	<!-- INCLUDED SCRIPTS -->
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	
-	<script src="../SCRIPTS/Validation.js"></script>
-	<script src="../SCRIPTS/Rules.js"></script>
-	<script src="../SCRIPTS/Controller.js"></script>
+	<script src="../scripts/validation.js"></script>
+	<script src="../scripts/rules.js"></script>
+	<script src="../scripts/controller.js"></script>
 
-	<script>
-		
-		/*
-		const P = new Rule('');
-		
-		console.log( P.required().email() );
-		*/
-		
-		
-		
-	</script>
 
 </body>
 </html>

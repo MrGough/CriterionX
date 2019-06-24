@@ -10,28 +10,32 @@
 
 
 
-$('[data-vrule]').each( function(ID)
-{
-	const X = new Validation($(this));
-		console.log(X.run());
+/*
+	EXAMPLE CALLS:
+
+	// CALL METHOD ONE
+	const X = new Validation();
+				X.builder();
+
+	// CALL METHOD TWO
+	const Email = new Validation( $(this) ).required().email().format();
+
+	// CALL METHOD THREE
+	new Validation($(this)).required().no_special_chars().match();
 	
-	const V = new Validation();
-		// V.builder($(this));
-});
+*/
+
+$('[data-vrule]').each( function(ID)
+{});
 
 $('input, textarea, button').on('change', function(e)
-{		
-	
-});
+{});
 
 
-
+// CONTROL ELEMENTS ON PAGE
 function Controller(Element)
-{
-	
-}
+{}
 
+// GENERATE FORM LAYOUTS
 function Layout(Element)
-{
-	
-}
+{}

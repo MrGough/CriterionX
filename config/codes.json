@@ -1,0 +1,132 @@
+{
+	1: 
+	{
+		"message":"Required",
+		"short":"Required",
+	},
+	2: 
+	{
+		"message":"Contains Special Characters",
+		"short":"",
+	},
+	3: 
+	{
+		"message":"None Number Format",
+		"short":"",
+	},
+	4: 
+	{
+		"message":"None Email Format",
+		"short":"",
+	},
+	5: 
+	{
+		"message":"None Mobile Number Format",
+		"short":"",
+	},
+	6: 
+	{
+		"message":"None Landline Numner Format",
+		"short":"",
+	},
+	7: 
+	{
+		"message":"Not Current Date",
+		"short":"",
+	},
+	8: 
+	{
+		"message":"Not Before Today",
+		"short":"",
+	},
+	9: 
+	{
+		"message":"Not After Today",
+		"short":"",
+	},
+	10: 
+	{
+		"message":"Invalid Date",
+		"short":"",
+	},
+	11: 
+	{
+		"message":"Not Before Date",
+		"short":"",
+	},
+	12: 
+	{
+		"message":"Not After Date",
+		"short":"",
+	},
+	13: 
+	{
+		"message":"Not Within Date Parameters",
+		"short":"",
+	},
+	14: 
+	{
+		"message":"Not Current Time",
+		"short":"",
+	},
+	15: 
+	{
+		"message":"Not Before Current Time",
+		"short":"",
+	},
+	16: 
+	{
+		"message":"Not After Current Time",
+		"short":"",
+	},
+	17: 
+	{
+		"message":"Invalid Time",
+		"short":"",
+	},
+	18: 
+	{
+		"message":"Not Before Time",
+		"short":"",
+	},
+	19: 
+	{
+		"message":"Not After Time",
+		"short":"",
+	},
+	20: 
+	{
+		"message":"Not Within Time Parameters",
+		"short":"",
+	},
+	21: 
+	{
+		"message":"Below Minimum",
+		"short":"",
+	},
+	22: 
+	{
+		"message":"Above Maximum",
+		"short":"",
+	},
+	23: 
+	{
+		"message":"Age Requirements Not Met: Under Age Limit",
+		"short":"",
+	},
+	24: 
+	{
+		"message":"Age Requirements Not Met: Over Age Limit",
+		"short":"",
+	},
+	25: 
+	{
+		"message":"Not Valid Password Format",
+		"short":"",
+	},
+	26: 
+	{
+		"message":"Does Not Match",
+		"short":"",
+	}
+}

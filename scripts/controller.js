@@ -25,11 +25,21 @@
 	
 */
 
-$('[data-vrule]').each( function(ID)
-{});
 
-$('input, textarea, button').on('change', function(e)
-{});
+$('[data-vrule]').each( function(ID)
+{
+});
+
+$('[data-vrule]').on('change, click', function(e)
+{
+	
+	let X = new Validation($(this));
+				console.log(X);
+				console.log(X.operator('required'));
+	
+	console.log('Change');
+	
+});
 
 
 // CONTROL ELEMENTS ON PAGE

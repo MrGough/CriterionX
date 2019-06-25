@@ -1,179 +1,179 @@
 {
-	1: 
+	"1": 
 	{
 		"name":"required",
 		"description":"",
 		"short_name":"req"
 	},
-	2: 
+	"2": 
 	{
 		"name":"no_special_characters",
 		"description":"",
 		"short_name":"nochars"
 	},
-	3: 
+	"3": 
 	{
 		"name":"currency",
 		"description":"",
 		"short_name":"cur"
 	},
-	4: 
+	"4": 
 	{
 		"name":"email",
 		"description":"",
 		"short_name":"em"
 	},
-	5: 
+	"5": 
 	{
 		"name":"mobile",
 		"description":"",
 		"short_name":"mob"
 	},
-	6: 
+	"6": 
 	{
 		"name":"landline",
 		"description":"",
 		"short_name":"tele"
 	},
-	7: 
+	"7": 
 	{
 		"name":"date_today",
 		"description":"",
 		"short_name":"dtday"
 	},
-	8: 
+	"8": 
 	{
 		"name":"date_before_today",
 		"description":"",
 		"short_name":"dtbef"
 	},
-	9: 
+	"9": 
 	{
 		"name":"date_after_today",
 		"description":"",
 		"short_name":"dtaft"
 	},
-	10: 
+	"10": 
 	{
 		"name":"date_arg",
 		"description":"",
 		"short_name":""
 	},
-	11: 
+	"11": 
 	{
 		"name":"date_before_arg",
 		"description":"",
 		"short_name":""
 	},
-	12: 
+	"12": 
 	{
 		"name":"date_after_arg",
 		"description":"",
 		"short_name":""
 	},
-	13: 
+	"13": 
 	{
 		"name":"date_within_arg",
 		"description":"",
 		"short_name":""
 	},
-	14: 
+	"14": 
 	{
 		"name":"time_now",
 		"description":"",
 		"short_name":""
 	},
-	15: 
+	"15": 
 	{
 		"name":"time_before_now",
 		"description":"",
 		"short_name":""
 	},
-	16: 
+	"16": 
 	{
 		"name":"time_after_now",
 		"description":"",
 		"short_name":""
 	},
-	17: 
+	"17": 
 	{
 		"name":"time_arg",
 		"description":"",
 		"short_name":""
 	},
-	18: 
+	"18": 
 	{
 		"name":"time_before_arg",
 		"description":"",
 		"short_name":""
 	},
-	19: 
+	"19": 
 	{
 		"name":"time_after_arg",
 		"description":"",
 		"short_name":""
 	},
-	20: 
+	"20": 
 	{
 		"name":"time_within_arg",
 		"description":"",
 		"short_name":""
 	},
-	21: 
+	"21": 
 	{
 		"name":"minimum",
 		"description":"",
 		"short_name":""
 	},
-	22: 
+	"22": 
 	{
 		"name":"maximum",
 		"description":"",
 		"short_name":""
 	},
-	23: 
+	"23": 
 	{
 		"name":"age_over_arg",
 		"description":"",
 		"short_name":""
 	},
-	24: 
+	"24": 
 	{
 		"name":"age_under_arg",
 		"description":"",
 		"short_name":""
 	},
-	25: 
+	"25": 
 	{
 		"name":"age_within_arg",
 		"description":"",
 		"short_name":""
 	},
-	26: 
+	"26": 
 	{
 		"name":"password",
 		"description":"",
 		"short_name":"pass"
 	},
-	27: 
+	"27": 
 	{
 		"name":"match",
 		"description":"",
 		"short_name":""
 	},
-	28: 
+	"28": 
 	{
 		"name":"",
 		"description":"",
 		"short_name":""
 	},
-	29: 
+	"29": 
 	{
 		"name":"",
 		"description":"",
 		"short_name":""
 	},
-	30: 
+	"30": 
 	{
 		"name":"",
 		"description":"",

@@ -18,7 +18,7 @@ class Validation
 		this.options = $(ELMT).attr('data-voption');
 		this.code = 0;
 		this.status = 1;
-		this.confg = this.configuration();
+		this.config = this.configuration();
 		this.core = ELMT;
 		return this;
 	}
@@ -63,8 +63,24 @@ class Validation
 	
 	configuration ()
 	{
-		import * as config from '../config/settings.json';
-		return config;
+		let configuration_data_packet = ( function()
+		{
+        let json = null;
+				
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': "config/settings.json",
+            'dataType': "json",
+            'success': function (data) {
+                json = data;
+            }
+        });
+				
+        return json;
+    })();
+		
+		return configuration_data_packet;
 	}
 	
 	error ()
@@ -90,33 +106,65 @@ class Validation
 	
 	operator (rule)
 	{
-		import * as rules '../config/rules.json';
 		let parsed_rule;
 		
+		let ruleset = ( function()
+		{
+        let json = null;
+				
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': "config/rules.json",
+            'dataType': "json",
+            'success': function (data) {
+                json = data;
+            }
+        });
+        return json;
+    })();
+	
 		// RUN RULE GETTER - VALUE PASSED INTEGER
 		if (typeof (rule) == "number")
 		{
-			parsed_rule = rules.rule.name;
+			parsed_rule = ruleset[rule].name;
 		}
 		// RUN RULE GETTER - VALUE PASSED STRING
 		else if (typeof (rule) == "string")
 		{
-			$.each(rule_file, function()
+			$.each(ruleset, function(i)
 			{
-				if (rule_file[i].name == rule)
+				if (ruleset[i].name == rule)
 				{ 
-					parsed_rule = rules.i.name;
+					parsed_rule = ruleset[i].name;
 				}
 			});
 		}
+		
+		console.log("PARSED RULE: " + parsed_rule);
 		
 		return parsed_rule;
 	}
 	
 	error_code (c)
 	{
-		import * as codes '../config/codes.json';
-		return JSON;
+		let codeset = ( function()
+		{
+        let json = null;
+				
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': "config/codes.json",
+            'dataType': "json",
+            'success': function (data) {
+                json = data;
+            }
+        });
+        return json;
+    })();
+		
+		return codeset[c].message;
 	}
  
 }
